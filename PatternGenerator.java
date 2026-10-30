@@ -6,15 +6,13 @@
 
 public class PatternGenerator {
     public static void main(String[] arg) {
-        stars(7);
-        System.out.println();
-        System.out.println();
+        //eo(6);
+        //System.out.println();
+        //System.out.println();
+        //eo(5);
+        //System.out.println();
+        //System.out.println();
         triangle(9);
-        System.out.println();
-        System.out.println();
-        odds(9);
-        System.out.println();
-        System.out.println();
     }
     public static void stars(int rows) {
         String stars = "*";
@@ -27,13 +25,16 @@ public class PatternGenerator {
     }
     public static void triangle(int rows) {
         int count = 1;
+        int i = 0;
         int number = 0;
         String print = "";
         while (count <= rows) {
             print = "";
-            for (int i = 0; i < count; i++) {
+            i = 0;
+            while (i < count) {
                 number = count;
                 print += number;
+                i++;
             }
             System.out.println(print);
             count++;
@@ -54,16 +55,46 @@ public class PatternGenerator {
         }
     }
     public static void eo(int maxE) {
-        String letter = "";
-        if (maxE % 2 == 0){
-            letter = "o";
+        String startLetter = "";
+        String print = "";
+        int count = 0;
+        int nextRows = (maxE * 2) - 1;
+        if (maxE % 2 == 0) {
+            startLetter = "o";
         } else {
-            letter = "e";
+            startLetter = "e";
         }
-        for (int i = 0; i < maxE; i++) {
-            if (i % 2 == 0) {
-                
+        while (count < maxE){
+            print = "";
+            for (int i = 0; i < count+1; i++) {
+                if (count % 2 == 0) {
+                    print += startLetter;
+                } else {
+                    if (startLetter == "o") {
+                        print += "e";
+                    } else {
+                        print += "o";
+                    }
+                }
             }
+            System.out.println(print);
+            count++;
+        }
+        while (count < nextRows) {
+            print = "";
+            for (int i = count; i > 0;i--){
+                if (count % 2 == 0) {
+                    print += startLetter;
+                } else {
+                    if (startLetter == "o") {
+                        print += "e";
+                    } else {
+                       print += "o";
+                    }
+                }
+            }
+            System.out.println(print);
+            count++;
         }
     }
 }
