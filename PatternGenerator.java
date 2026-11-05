@@ -123,8 +123,8 @@ public class PatternGenerator {
             count--;
         }
     }
-    //Precondition: 
-    //Postcondition: 
+    //Precondition: A number of rows must be inputted. The input must be an integer. The input will never cause an error, but nothing will be printed if the input is 0 or lower. 
+    //Postcondition: A pyramid of numbers will be created. It will be upside down, with the largest side on the top, and the numbers will go from smallest to biggest as you go down the rows. 
     public static void pyramid(int rows) {
         String print = "";
         int printNum = 0;
